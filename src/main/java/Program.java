@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Program {
 
     private User[] dataBase;
@@ -17,7 +18,14 @@ public class Program {
 
     }
     public User signIn(){
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите логин: ");
+        String login = scanner.nextLine();
+        System.out.println("Введите пароль: ");
+        String password = scanner.nextLine();
+
+        User user = checkUser(login,password);
+        return user;
     }
 
     public User checkUser(String login,String password){
