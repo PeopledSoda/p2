@@ -6,23 +6,31 @@ public class Program {
 
     public Program(){
         dataBase=new User[100];
-        dataBase[0]=null;
-        dataBase[1]=null;
-        dataBase[2]=null;
-        dataBase[3]=null;
-        dataBase[4]=null;
-        dataBase[5]=null;
+        dataBase[0]=new User("aigiz","qwerty","ADMIN");
+        dataBase[1]=new User("danya","qwerty1","user");;
+        dataBase[2]=new User("sanya","qwerty2","ADMIN");;
+        dataBase[3]=new User("frog","qwertywa","user");;
+        dataBase[4]=new User("pig","qwertyu","user");;
+        dataBase[5]=new User("aigiz777","qwerty777","user");;
 
-        countUsers=4;
+        countUsers=6;
 
     }
     public User signIn(){
         return null;
     }
 
-    public User checkUser(Srting Login,String password){
+    public User checkUser(String login,String password){
+        for (int i=0;i<countUsers;i++) {
+            if(login.equals(dataBase[i].getLogin())&&password.equals(dataBase[i].getPassword())) {
+                return dataBase[i];
+                }
+            }
         return null;
-    }
+        }
+
+
+
 
 
     public void run(){
